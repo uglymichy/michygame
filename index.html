@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fun game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+      <h1>IJEBU PREDICT!!</h1>
+      <p>Predict a number between 1 and 100:</p>
+      <input type="text" id="guessInput">
+      <button onclick="checkGuess()">Submit</button>
+      <p id="result"></p>
+      <h5>Sponsored by Micheal Ogunkanbi</h5>
+    </div>
+    <script>
+function checkGuess() {
+    var randomNumber = Math.floor(Math.random() * 100) + 1;
+    var guess = document.getElementById("guessInput").value;
+    if (guess < 1 || guess > 100){
+    alert("Enter a valid number between 1 and 100");
+    } else if (guess === randomNumber) {
+    alert("Congratulations! You WON!!!. The random number generated was " + randomNumber );
+    resetGame();
+    } else {
+    alert("Try again! You LOST!!!. The random number generated was " + randomNumber);
+    }
+}
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
